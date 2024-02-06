@@ -32,7 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "ToneflixCode\\KudiSmsNotification\\Tests\\": "tests"
+            "ToneflixCode\\KudiSmsNotification\\Tests\\": "tests/"
         }
     },
     "extra": {
