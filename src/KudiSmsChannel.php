@@ -57,7 +57,6 @@ class KudiSmsChannel
         try {
             $to = $this->getTo($notifiable, $notification);
             $message = $notification->toKudiSms($notifiable);
-
             if (is_string($message)) {
                 $message = new KudiSmsMessage($message);
             }

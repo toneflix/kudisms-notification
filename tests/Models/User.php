@@ -33,13 +33,13 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    // public function routeNotificationForKudiSms(): Attribute
+    public function routeNotificationForKudiSms()
+    {
+        return $this->phone;
+    }
+
+    // public function phoneNumber(): Attribute
     // {
     //     return Attribute::make(fn () => $this->phone);
     // }
-
-    public function phoneNumber(): Attribute
-    {
-        return Attribute::make(fn () => $this->phone);
-    }
 }

@@ -13,7 +13,7 @@ test('user can recieve sms', function () {
     expect(fn () => $user->notify(new SendSms("Hello {$user->name}! This is test SMS.")))
         ->not()
         ->toThrow(\Exception::class);
-})->skip('Skipped for cost saving.');
+});//->skip('Skipped for cost saving.');
 
 test('user can recieve voice call.', function () {
     $user = User::factory()->create();
