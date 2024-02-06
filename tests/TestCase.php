@@ -51,7 +51,7 @@ abstract class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => '\\ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\' .
+            fn (string $modelName) => 'ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\' .
             class_basename(
                 $modelName
             ) . 'Factory'

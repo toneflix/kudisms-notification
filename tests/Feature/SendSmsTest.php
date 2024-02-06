@@ -1,5 +1,7 @@
 <?php
 
+namespace ToneflixCode\KudiSmsNotification\Tests\Feature;
+
 use ToneflixCode\KudiSmsNotification\Tests\Models\User;
 use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendCall;
 use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendSms;
