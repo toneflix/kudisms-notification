@@ -6,10 +6,15 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Orchestra\Testbench\TestCase as Orchestra;
 use ToneflixCode\KudiSmsNotification\KudiSmsProvider;
+use ToneflixCode\KudiSmsNotification\Tests\Database\Factories\UserFactory;
 
 abstract class TestCase extends Orchestra
 {
     use RefreshDatabase;
+
+    protected $factories = [
+        UserFactory::class,
+    ];
 
     public function getEnvironmentSetUp($app)
     {
