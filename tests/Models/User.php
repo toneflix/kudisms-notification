@@ -38,8 +38,8 @@ class User extends Authenticatable
         return $this->phone;
     }
 
-    // public function phoneNumber(): Attribute
-    // {
-    //     return Attribute::make(fn () => $this->phone);
-    // }
+    public function phoneNumber(): Attribute
+    {
+        return Attribute::make(fn () => $this->phone);
+    }
 }
