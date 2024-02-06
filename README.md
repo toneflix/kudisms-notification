@@ -1,7 +1,7 @@
 # KUDI SMS Notifications channel for Laravel
 
 
-[![Test & Lint](https://github.com/toneflix/kudisms-notification/actions/workflows/php.yml/badge.svg?branch=main)](https://github.com/toneflix/kudisms-notification/actions/workflows/php.yml)
+[![Test & Lint](https://github.com/toneflix/kudisms-notification/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/toneflix/kudisms-notification/actions/workflows/run-tests.yml)
 [![Latest Stable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Total Downloads](http://poser.pugx.org/toneflix-code/kudisms-notification/downloads)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Latest Unstable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v/unstable)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![License](http://poser.pugx.org/toneflix-code/kudisms-notification/license)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![PHP Version Require](http://poser.pugx.org/toneflix-code/kudisms-notification/require/php)](https://packagist.org/packages/toneflix-code/kudisms-notification)
 [![codecov](https://codecov.io/gh/toneflix/kudisms-notification/graph/badge.svg?token=2O7aFulQ9P)](https://codecov.io/gh/toneflix/kudisms-notification)
 
