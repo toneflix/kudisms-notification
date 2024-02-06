@@ -12,7 +12,7 @@ class KudiSmsProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/config.php' => config_path('kudi-notification.php'),
+            __DIR__.'/../config/config.php' => config_path('kudi-notification.php'),
         ], 'config');
     }
 
@@ -22,7 +22,7 @@ class KudiSmsProvider extends ServiceProvider
     public function register()
     {
         // Automatically apply the package configuration
-        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'kudi-notification');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'kudi-notification');
 
         // Register the main class to use with the facade
         $this->app->singleton('kudi-notification', function () {

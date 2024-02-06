@@ -15,22 +15,22 @@ class KudiNotification
 
     public string $apiKey;
 
-    public function __construct(?string $senderId = null, ?string $apiKey = null, ?string $callerId = null)
+    public function __construct(string $senderId = null, string $apiKey = null, string $callerId = null)
     {
-        $this->senderId =  $senderId ?: config('kudi-notification.sender_id');
-        $this->callerId =  $callerId ?: config('kudi-notification.caller_id');
-        $this->apiKey   =  $apiKey   ?: config('kudi-notification.api_key');
+        $this->senderId = $senderId ?: config('kudi-notification.sender_id');
+        $this->callerId = $callerId ?: config('kudi-notification.caller_id');
+        $this->apiKey = $apiKey ?: config('kudi-notification.api_key');
 
-        if (!$this->apiKey) {
+        if (! $this->apiKey) {
             throw InvalidConfigException::missingToken();
         }
 
-        if (!$this->senderId && !$this->callerId) {
+        if (! $this->senderId && ! $this->callerId) {
             throw InvalidConfigException::missingConfig();
         }
     }
 
-    public function sms(?string $senderId = null, ?string $apiKey = null): SmsSender
+    public function sms(string $senderId = null, string $apiKey = null): SmsSender
     {
         if (empty($callerId) && empty($this->senderId)) {
             throw CouldNotSendNotification::missingFrom();
@@ -42,7 +42,7 @@ class KudiNotification
         );
     }
 
-    public function voice(?string $callerId = null, ?string $apiKey = null): VoiceSender
+    public function voice(string $callerId = null, string $apiKey = null): VoiceSender
     {
         if (empty($callerId) && empty($this->callerId) && empty($this->senderId)) {
             throw CouldNotSendNotification::missingFrom();
@@ -57,10 +57,9 @@ class KudiNotification
     /**
      * Send a KudiMessage to the a phone number.
      *
-     * @param KudiMessage $message
-     * @param string|null $to
      *
      * @return mixed
+     *
      * @throws CouldNotSendNotification
      */
     public function sendMessage(KudiMessage $message, ?string $to)

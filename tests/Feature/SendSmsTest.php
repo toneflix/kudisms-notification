@@ -1,8 +1,8 @@
 <?php
 
-use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendSms;
 use ToneflixCode\KudiSmsNotification\Tests\Models\User;
 use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendCall;
+use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendSms;
 use ToneflixCode\KudiSmsNotification\Tests\Notifications\SendTtsCall;
 
 test('user can recieve sms', function () {

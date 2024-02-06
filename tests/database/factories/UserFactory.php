@@ -2,9 +2,9 @@
 
 namespace ToneflixCode\KudiSmsNotification\Tests\Database\Factories;
 
-use ToneflixCode\KudiSmsNotification\Tests\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
+use ToneflixCode\KudiSmsNotification\Tests\Models\User;
 
 class UserFactory extends Factory
 {

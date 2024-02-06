@@ -27,8 +27,7 @@ class SendSms extends Notification implements ShouldQueue
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable notifiable
-     *
+     * @param  mixed  $notifiable notifiable
      * @return array
      */
     public function via($notifiable)
@@ -39,8 +38,7 @@ class SendSms extends Notification implements ShouldQueue
     /**
      * Get the sms representation of the notification.
      *
-     * @param mixed $notifiable notifiable
-     *
+     * @param  mixed  $notifiable notifiable
      * @return \NotificationChannels\Twilio\TwilioSmsMessage
      */
     public function toKudiSms($notifiable)

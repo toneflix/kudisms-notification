@@ -20,8 +20,8 @@ class CouldNotSendNotification extends Exception
     public static function invalidMessage()
     {
         return new static(
-            'The toKudiSms() method only accepts instances of ' .
-                KudiSmsMessage::class . ' or ' .
+            'The toKudiSms() method only accepts instances of '.
+                KudiSmsMessage::class.' or '.
                 KudiSmsVoiceMessage::class
         );
     }

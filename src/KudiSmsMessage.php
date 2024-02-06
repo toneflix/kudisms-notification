@@ -10,8 +10,6 @@ class KudiSmsMessage extends KudiMessage
 
     /**
      * Create a new message instance.
-     *
-     * @param  string $message
      */
     public function __construct(string $message = '')
     {
@@ -22,7 +20,6 @@ class KudiSmsMessage extends KudiMessage
     /**
      * Set the message.
      *
-     * @param  string $message
      * @return $this
      */
     public function message(string $message): self
@@ -35,7 +32,6 @@ class KudiSmsMessage extends KudiMessage
     /**
      * Set the message senderId.
      *
-     * @param  string $senderId
      * @return $this
      */
     public function senderId(string $senderId): self

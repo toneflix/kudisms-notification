@@ -11,7 +11,6 @@ class KudiSmsTTSMessage extends KudiMessage
     /**
      * Set the message.
      *
-     * @param  string $message
      * @return $this
      */
     public function message(string $message): self
@@ -25,7 +24,6 @@ class KudiSmsTTSMessage extends KudiMessage
     /**
      * Set the message callerId.
      *
-     * @param  string $callerId
      * @return $this
      */
     public function callerId(string $callerId): self

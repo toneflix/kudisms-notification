@@ -12,9 +12,6 @@ class KudiSmsChannel
 {
     /**
      * KudiSmsChannel constructor.
-     *
-     * @param  \ToneflixCode\KudiSmsNotification\KudiNotification  $kudi
-     * @param  \Illuminate\Contracts\Events\Dispatcher  $events
      */
     public function __construct(
         protected KudiNotification $kudi,
@@ -26,10 +23,10 @@ class KudiSmsChannel
     /**
      * Get the address to send a notification to.
      *
-     * @param mixed $notifiable
-     * @param Notification|null $notification
-     *
+     * @param  mixed  $notifiable
+     * @param  Notification|null  $notification
      * @return mixed
+     *
      * @throws CouldNotSendNotification
      */
     protected function getTo($notifiable, $notification = null)
@@ -50,10 +47,9 @@ class KudiSmsChannel
     /**
      * Send the given notification.
      *
-     * @param mixed $notifiable
-     * @param Notification $notification
-     *
+     * @param  mixed  $notifiable
      * @return mixed
+     *
      * @throws Exception
      */
     public function send($notifiable, Notification $notification)
@@ -69,6 +65,7 @@ class KudiSmsChannel
             if (! $message instanceof KudiMessage) {
                 throw CouldNotSendNotification::invalidMessage();
             }
+
             return $this->kudi->sendMessage($message, $to);
         } catch (Exception $exception) {
             $event = new NotificationFailed(

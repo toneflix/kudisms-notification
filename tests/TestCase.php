@@ -4,8 +4,8 @@ namespace ToneflixCode\KudiSmsNotification\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use ToneflixCode\KudiSmsNotification\KudiSmsProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
+use ToneflixCode\KudiSmsNotification\KudiSmsProvider;
 
 abstract class TestCase extends Orchestra
 {
@@ -42,7 +42,7 @@ abstract class TestCase extends Orchestra
             $_SERVER['KUDISMS_TEST_NUMBERS'] ?? $_ENV['KUDISMS_TEST_NUMBERS'] ?? ''
         );
 
-        $migration = include __DIR__ . '/database/migrations/create_users_tables.php';
+        $migration = include __DIR__.'/database/migrations/create_users_tables.php';
         $migration->up();
     }
 
@@ -51,10 +51,10 @@ abstract class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\' .
+            fn (string $modelName) => 'ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\'.
             class_basename(
                 $modelName
-            ) . 'Factory'
+            ).'Factory'
         );
     }
 

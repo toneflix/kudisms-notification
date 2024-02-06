@@ -13,7 +13,6 @@ class KudiSmsVoiceMessage extends KudiMessage
     /**
      * Set the message url.
      *
-     * @param  string $url
      * @return $this
      */
     public function url(string $url): self
@@ -27,7 +26,6 @@ class KudiSmsVoiceMessage extends KudiMessage
     /**
      * Set the message callerId.
      *
-     * @param  string $callerId
      * @return $this
      */
     public function callerId(string $callerId): self
