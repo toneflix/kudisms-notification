@@ -1,84 +1,84 @@
 {
-    "name": "toneflix-code/kudisms-notification",
-    "description": "KUDI SMS Notifications Driver for Laravel.",
-    "homepage": "https://github.com/toneflix-code/kudi-notification",
-    "license": "MIT",
-    "keywords": [
-        "SMS",
-        "Kudi",
-        "Legacy",
-        "laravel",
-        "kudisms",
-        "kudisms-notification"
+  "name": "toneflix-code/kudisms-notification",
+  "description": "KUDI SMS Notifications Driver for Laravel.",
+  "homepage": "https://github.com/toneflix-code/kudi-notification",
+  "license": "MIT",
+  "keywords": [
+    "SMS",
+    "Kudi",
+    "Legacy",
+    "laravel",
+    "kudisms",
+    "kudisms-notification"
+  ],
+  "authors": [
+    {
+      "name": "Legacy",
+      "email": "legacy@toneflix.com.ng",
+      "homepage": "https://legacy.toneflix.com.ng",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">= 8.1",
+    "guzzlehttp/guzzle": "^7.0",
+    "illuminate/notifications": "^9.0|^10.0|^11.0|^12.0",
+    "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+    "toneflix-code/kudi-sms-php": "^1.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "fakerphp/faker": "^1.21",
+    "illuminate/contracts": "^9.0|^10.0|^11.0|^12.0",
+    "orchestra/testbench": "^8.8|9.0",
+    "pestphp/pest": "^2.33",
+    "pestphp/pest-plugin-laravel": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ToneflixCode\\KudiSmsNotification\\": "src/",
+      "ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\": "tests/database/factories"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ToneflixCode\\KudiSmsNotification\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "ToneflixCode\\KudiSmsNotification\\KudiSmsProvider"
+      ],
+      "aliases": {
+        "KudiNotification": "ToneflixCode\\KudiSmsNotification\\KudiSmsProvider\\Facades\\KudiNotification"
+      }
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": "@composer run prepare",
+    "clear": "@php vendor/bin/testbench package:purge-laravel-pay-pocket --ansi",
+    "prepare": "@php vendor/bin/testbench package:discover --ansi",
+    "build": [
+      "@composer run prepare",
+      "@php vendor/bin/testbench workbench:build --ansi"
     ],
-    "authors": [
-        {
-            "name": "Legacy",
-            "email": "legacy@toneflix.com.ng",
-            "homepage": "https://legacy.toneflix.com.ng",
-            "role": "Developer"
-        }
+    "start": [
+      "Composer\\Config::disableProcessTimeout",
+      "@composer run build",
+      "@php vendor/bin/testbench serve"
     ],
-    "require": {
-        "php": ">= 8.1",
-        "guzzlehttp/guzzle": "^7.0",
-        "illuminate/notifications": "^9.0|^10.0",
-        "illuminate/support": "^9.0|^10.0",
-        "toneflix-code/kudi-sms-php": "^1.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.0",
-        "fakerphp/faker": "^1.21",
-        "illuminate/contracts": "^9.0|^10.0",
-        "orchestra/testbench": "^8.8",
-        "pestphp/pest": "^2.33",
-        "pestphp/pest-plugin-laravel": "^2.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "ToneflixCode\\KudiSmsNotification\\": "src/",
-            "ToneflixCode\\KudiSmsNotification\\Tests\\Database\\Factories\\": "tests/database/factories"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ToneflixCode\\KudiSmsNotification\\Tests\\": "tests/"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "ToneflixCode\\KudiSmsNotification\\KudiSmsProvider"
-            ],
-            "aliases": {
-                "KudiNotification": "ToneflixCode\\KudiSmsNotification\\KudiSmsProvider\\Facades\\KudiNotification"
-            }
-        }
-    },
-    "scripts": {
-        "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-laravel-pay-pocket --ansi",
-        "prepare": "@php vendor/bin/testbench package:discover --ansi",
-        "build": [
-            "@composer run prepare",
-            "@php vendor/bin/testbench workbench:build --ansi"
-        ],
-        "start": [
-            "Composer\\Config::disableProcessTimeout",
-            "@composer run build",
-            "@php vendor/bin/testbench serve"
-        ],
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint"
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

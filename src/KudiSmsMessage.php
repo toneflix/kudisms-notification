@@ -11,11 +11,10 @@ class KudiSmsMessage extends KudiMessage
     /**
      * Create a new message instance.
      */
-    public function __construct(string $message = '')
-    {
-        $this->message = $message;
-        $this->senderId = '';
-    }
+    public function __construct(
+        public string $message = '',
+        public string $senderId = '',
+    ) {}
 
     /**
      * Set the message.
