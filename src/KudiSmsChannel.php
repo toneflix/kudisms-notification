@@ -16,9 +16,7 @@ class KudiSmsChannel
     public function __construct(
         protected KudiNotification $kudi,
         protected Dispatcher $events
-    ) {
-        //
-    }
+    ) {}
 
     /**
      * Get the address to send a notification to.
