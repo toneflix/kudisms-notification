@@ -15,7 +15,7 @@ class KudiNotification
 
     public string $apiKey;
 
-    public function __construct(string $senderId = null, string $apiKey = null, string $callerId = null)
+    public function __construct(?string $senderId = null, ?string $apiKey = null, ?string $callerId = null)
     {
         $this->senderId = $senderId ?: config('kudi-notification.sender_id');
         $this->callerId = $callerId ?: config('kudi-notification.caller_id');
@@ -30,7 +30,7 @@ class KudiNotification
         }
     }
 
-    public function sms(string $senderId = null, string $apiKey = null): SmsSender
+    public function sms(?string $senderId = null, ?string $apiKey = null): SmsSender
     {
         if (empty($callerId) && empty($this->senderId)) {
             throw CouldNotSendNotification::missingFrom();
@@ -42,7 +42,7 @@ class KudiNotification
         );
     }
 
-    public function voice(string $callerId = null, string $apiKey = null): VoiceSender
+    public function voice(?string $callerId = null, ?string $apiKey = null): VoiceSender
     {
         if (empty($callerId) && empty($this->callerId) && empty($this->senderId)) {
             throw CouldNotSendNotification::missingFrom();
