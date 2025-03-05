@@ -20,8 +20,8 @@ class CouldNotSendNotification extends Exception
     public static function invalidMessage()
     {
         return new static(
-            'The toKudiSms() method only accepts instances of '.
-                KudiSmsMessage::class.' or '.
+            'The toKudiSms() method only accepts instances of ' .
+                KudiSmsMessage::class . ' or ' .
                 KudiSmsVoiceMessage::class
         );
     }
@@ -34,7 +34,7 @@ class CouldNotSendNotification extends Exception
     public static function invalidReceiver(): self
     {
         return new static(
-            'The notifiable did not have a receiving phone number. Add a routeNotificationForKudiSms
+            'The notifiable did not have a receiving phone number. Add a routeNotificationForKudiSms or routeNotificationForSms
             method or a phone_number attribute to your notifiable.'
         );
     }
