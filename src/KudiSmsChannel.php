@@ -37,8 +37,14 @@ class KudiSmsChannel
         if ($notifiable->routeNotificationFor('kudiSms', $notification)) {
             return $notifiable->routeNotificationFor('kudiSms', $notification);
         }
+        if ($notifiable->routeNotificationFor('sms', $notification)) {
+            return $notifiable->routeNotificationFor('sms', $notification);
+        }
         if (isset($notifiable->phone_number)) {
             return $notifiable->phone_number;
+        }
+        if (isset($notifiable->phone)) {
+            return $notifiable->phone;
         }
 
         throw CouldNotSendNotification::invalidReceiver();
