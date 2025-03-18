@@ -5,7 +5,7 @@
 [![Latest Stable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Total Downloads](http://poser.pugx.org/toneflix-code/kudisms-notification/downloads)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Latest Unstable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v/unstable)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![License](http://poser.pugx.org/toneflix-code/kudisms-notification/license)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![PHP Version Require](http://poser.pugx.org/toneflix-code/kudisms-notification/require/php)](https://packagist.org/packages/toneflix-code/kudisms-notification)
 [![codecov](https://codecov.io/gh/toneflix/kudisms-notification/graph/badge.svg?token=2O7aFulQ9P)](https://codecov.io/gh/toneflix/kudisms-notification)
 
-This package makes it easy to send [KudiSMS notifications](https://kudisms.net) with Laravel 8.x, 9.x & 10.x
+This package makes it easy to send [KudiSMS notifications](https://kudisms.net) with Laravel 8.x, 9.x, 10.x, 11.x & 12.x
 
 ## Contents
 
