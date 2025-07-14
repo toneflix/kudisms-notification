@@ -13,4 +13,6 @@ class KudiMessage
     public string $callerId;
 
     public string $senderId;
+
+    public bool $corporate;
 }

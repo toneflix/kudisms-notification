@@ -65,15 +65,27 @@ class KudiNotification
     public function sendMessage(KudiMessage $message, ?string $to)
     {
         if ($message instanceof KudiSmsMessage) {
-            return $this->sms($message->senderId ?: $this->senderId)->send($to, $message->message);
+            if ($message->corporate) {
+                return $this->sms(
+                    $message->senderId ?: $this->senderId
+                )->corporate()->send($to, $message->message);
+            }
+
+            return $this->sms(
+                $message->senderId ?: $this->senderId
+            )->send($to, $message->message);
         }
 
         if ($message instanceof KudiSmsVoiceMessage) {
-            return $this->voice($message->callerId ?: $this->callerId)->send($to, $message->audio);
+            return $this->voice(
+                $message->callerId ?: $this->callerId
+            )->send($to, $message->audio);
         }
 
         if ($message instanceof KudiSmsTTSMessage) {
-            return $this->voice($message->callerId ?: $this->callerId)->tts($to, $message->message);
+            return $this->voice(
+                $message->callerId ?: $this->callerId
+            )->tts($to, $message->message);
         }
 
         throw CouldNotSendNotification::invalidMessage($message);

@@ -14,6 +14,7 @@ class KudiSmsMessage extends KudiMessage
     public function __construct(
         public string $message = '',
         public string $senderId = '',
+        public bool $corporate = false,
     ) {}
 
     /**
@@ -36,6 +37,18 @@ class KudiSmsMessage extends KudiMessage
     public function senderId(string $senderId): self
     {
         $this->senderId = $senderId;
+
+        return $this;
+    }
+
+    /**
+     * Indicate that the message is a corporate messaeg.
+     *
+     * @return $this
+     */
+    public function corporate(): self
+    {
+        $this->corporate = true;
 
         return $this;
     }
