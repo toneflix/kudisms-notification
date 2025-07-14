@@ -39,7 +39,7 @@ class SendTtsCall extends Notification implements ShouldQueue
      * Get the sms representation of the notification.
      *
      * @param  mixed  $notifiable notifiable
-     * @return \NotificationChannels\Twilio\TwilioSmsMessage
+     * @return \ToneflixCode\KudiSmsNotification\KudiSmsTTSMessage
      */
     public function toKudiSms($notifiable)
     {

@@ -1,6 +1,5 @@
 # KUDI SMS Notifications channel for Laravel
 
-
 [![Test & Lint](https://github.com/toneflix/kudisms-notification/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/toneflix/kudisms-notification/actions/workflows/run-tests.yml)
 [![Latest Stable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Total Downloads](http://poser.pugx.org/toneflix-code/kudisms-notification/downloads)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![Latest Unstable Version](http://poser.pugx.org/toneflix-code/kudisms-notification/v/unstable)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![License](http://poser.pugx.org/toneflix-code/kudisms-notification/license)](https://packagist.org/packages/toneflix-code/kudisms-notification) [![PHP Version Require](http://poser.pugx.org/toneflix-code/kudisms-notification/require/php)](https://packagist.org/packages/toneflix-code/kudisms-notification)
 [![codecov](https://codecov.io/gh/toneflix/kudisms-notification/graph/badge.svg?token=2O7aFulQ9P)](https://codecov.io/gh/toneflix/kudisms-notification)
@@ -11,7 +10,7 @@ This package makes it easy to send [KudiSMS notifications](https://kudisms.net) 
 
 - [Installation](#installation)
 - [Usage](#usage)
-	- [Available Message methods](#available-message-methods)
+  - [Available Message methods](#available-message-methods)
 - [Changelog](#changelog)
 - [Testing](#testing)
 - [Security](#security)
@@ -23,7 +22,7 @@ This package makes it easy to send [KudiSMS notifications](https://kudisms.net) 
 
 You can install the package via composer:
 
-``` bash
+```bash
 composer require toneflix-code/kudisms-notification
 ```
 
@@ -42,6 +41,7 @@ KUDISMS_TEST_NUMBERS=23423423423,12312312312 # Comma separated list of numbers t
 ### Advanced configuration
 
 Run `php artisan vendor:publish --provider="ToneflixCode\KudiSmsNotification\KudiSmsProvider"`
+
 ```
 /config/kudi-notification.php
 ```
@@ -84,7 +84,7 @@ class AccountApproved extends Notification
         return [KudiSmsChannel::class];
     }
 
-    public function toTwilio($notifiable)
+    public function toKudiSms($notifiable)
     {
         return (new KudiSmsVoiceMessage())
             ->url("https://download.samplelib.com/mp3/sample-3s.mp3");
@@ -94,7 +94,7 @@ class AccountApproved extends Notification
 
 Or create a Kudi Text To Speach call:
 
-``` php
+```php
 use ToneflixCode\KudiSmsNotification\KudiSmsChannel;
 use ToneflixCode\KudiSmsNotification\KudiSmsTTSMessage;
 use Illuminate\Notifications\Notification;
@@ -106,7 +106,7 @@ class AccountApproved extends Notification
         return [KudiSmsChannel::class];
     }
 
-    public function toTwilio($notifiable)
+    public function toKudiSms($notifiable)
     {
         return (new KudiSmsTTSMessage())
             ->message("Hello {$notifiable->name}, how are you today?");
@@ -146,7 +146,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 ## Testing
 
-``` bash
+```bash
 $ composer test
 ```
 
